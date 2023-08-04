@@ -1,0 +1,127 @@
+
+<main id="main">
+ <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row" data-aos="fade-in">
+       
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <ion-card>
+            <ion-card-content>
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>B-85 Swami Residency Behind-Air Force Station,Makarpura, Vadodara -     390014, (Gujarat)</p>
+                </div>
+    
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>shahnikunjsbit@gmail.com</p>
+                </div>
+    
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+91-6355489110</p>
+                </div>
+    
+                         </div>
+            </ion-card-content>
+          </ion-card>
+        
+
+        </div>
+
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <ion-card>
+            <ion-card-content>
+          <form [formGroup]="contactusForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <ion-label>Your Name</ion-label>
+                <ion-input type="text" formControlName="name"
+                 name="name"  id="name" 
+                 [ngClass]="{
+                  'is-invalid':
+                  isSubmitted && Error['name'].errors
+                }"
+                >
+                </ion-input>
+                <div  *ngIf="isSubmitted  &&  Error['name'].errors" class="text-danger px-2">
+                  Name is Required
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <ion-label>Your Email</ion-label>
+                <ion-input type="email" formControlName="email"   
+                name="email" id="email" 
+                [ngClass]="{
+                  'is-invalid':
+                  isSubmitted && Error['email'].errors
+                }"
+                >
+                </ion-input>
+                <div  *ngIf="isSubmitted  &&  Error['email'].errors" class="text-danger px-2">
+                  Email is Required
+                </div>
+              </div>
+            
+            <div class="form-group">
+              <ion-label>Subject</ion-label>
+              <ion-input type="text" formControlName="subject"  
+              name="subject"
+               id="subject"  
+                [ngClass]="{
+                'is-invalid':
+                isSubmitted && Error['subject'].errors
+              }"
+              >
+              </ion-input>
+              <div  *ngIf="isSubmitted  &&  Error['subject'].errors" class="text-danger px-2">
+                subject is Required
+              </div>
+            </div>
+            <div class="form-group">
+              <ion-label>Message</ion-label>
+              <ion-textarea  formControlName="message" class="form-control" 
+              name="message" rows="10" 
+              [ngClass]="{
+                'is-invalid':
+                isSubmitted && Error['message'].errors
+              }"
+              >
+            
+              </ion-textarea>
+            <div  *ngIf="isSubmitted  &&  Error['message'].errors" class="text-danger px-2">
+              Message is Required
+            </div>
+            
+            </div>
+            <div class="text-center  mt-4"><button class="btn btn-primary" type="submit">Send Message</button></div>
+
+            </div>
+           </form>
+            </ion-card-content>
+          </ion-card>
+         
+        </div>
+       
+
+      </div>
+    
+   
+
+    </div>
+  </section><!-- End Contact Section -->
+</main>
+<ngx-spinner type="ball-scale-multiple">
+  <p class="text-white"> Loading... </p>
+</ngx-spinner>

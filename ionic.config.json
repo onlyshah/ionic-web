@@ -1,0 +1,7 @@
+{
+  "name": "ionic-web",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
